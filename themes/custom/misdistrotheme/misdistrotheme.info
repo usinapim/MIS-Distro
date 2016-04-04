@@ -1,0 +1,13 @@
+name = MIS Distro
+description = Theme MIS Distro
+package = MIS Distro
+core = 7.x
+base theme = bootstrap
+regions[header_left] = Encabezado de página izquierda
+regions[header_right] = Encabezado de página derecho
+regions[content] = Contenido
+regions[footer_left] = Pie de página izquierda
+regions[footer_right] = Pie de página derecho
+stylesheets[screen][] = css/MISdistro.css
+scripts[] = js/MISdistro.js
+plugins[panels][layouts] = layouts

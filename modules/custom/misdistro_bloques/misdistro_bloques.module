@@ -1,0 +1,149 @@
+<?php
+/*
+* Implements hook_ctools_plugin_directory().
+*/
+
+include_once 'misdistro_bloques.inc';
+
+function misdistro_bloques_ctools_plugin_directory($owner, $plugin_type) {
+   if ($owner == 'ctools' && $plugin_type == 'content_types') {
+     return 'plugins/' . $plugin_type;
+   }
+ }
+
+function misdistro_theme($existing, $type, $theme, $path) {
+  return array(
+    'misdistro_bloques_alerta' => array(
+      'path' => drupal_get_path('module', 'misdistro_bloques') . '/templates',
+      'template' => 'misdistro_bloques_alerta'
+    ),
+    'misdistro_bloques_carrousel' => array(
+      'path' => drupal_get_path('module', 'misdistro_bloques') . '/templates',
+      'template' => 'misdistro_bloques_carrousel'
+    ),
+    'misdistro_bloques_campo_categoria_noticia' => array(
+      'path' => drupal_get_path('module', 'misdistro_bloques') . '/templates',
+      'template' => 'misdistro_bloques_campo_categoria_noticia'
+    ),
+    'misdistro_bloques_campo_costo' => array(
+      'path' => drupal_get_path('module', 'misdistro_bloques') . '/templates',
+      'template' => 'misdistro_bloques_campo_costo'
+    ),
+    'misdistro_bloques_campo_links_relacionados' => array(
+      'path' => drupal_get_path('module', 'misdistro_bloques') . '/templates',
+      'template' => 'misdistro_bloques_campo_links_relacionados'
+    ),
+    'misdistro_bloques_campo_paginas_relacionadas' => array(
+      'path' => drupal_get_path('module', 'misdistro_bloques') . '/templates',
+      'template' => 'misdistro_bloques_campo_paginas_relacionadas'
+    ),
+    'misdistro_bloques_campo_requisitos' => array(
+      'path' => drupal_get_path('module', 'misdistro_bloques') . '/templates',
+      'template' => 'misdistro_bloques_campo_requisitos'
+    ),
+    'misdistro_bloques_campo_siglas_area' => array(
+      'path' => drupal_get_path('module', 'misdistro_bloques') . '/templates',
+      'template' => 'misdistro_bloques_campo_siglas_area'
+    ),
+    'misdistro_bloques_campo_tags' => array(
+      'path' => drupal_get_path('module', 'misdistro_bloques') . '/templates',
+      'template' => 'misdistro_bloques_campo_tags'
+    ),
+    'misdistro_bloques_campo_tipo_tramite' => array(
+      'path' => drupal_get_path('module', 'misdistro_bloques') . '/templates',
+      'template' => 'misdistro_bloques_campo_tipo_tramite'
+    ),
+    'misdistro_bloques_galeria_imagenes_min' => array(
+      'path' => drupal_get_path('module', 'misdistro_bloques') . '/templates',
+      'template' => 'misdistro_bloques_galeria_imagenes_min'
+    ),
+    'misdistro_bloques_galeria_imagenes_min_item' => array(
+      'path' => drupal_get_path('module', 'misdistro_bloques') . '/templates',
+      'template' => 'misdistro_bloques_galeria_imagenes_min_item'
+    ),
+    'misdistro_bloques_listado_vertical' => array(
+      'path' => drupal_get_path('module', 'misdistro_bloques') . '/templates',
+      'template' => 'misdistro_bloques_listado_vertical'
+    ),
+    'misdistro_bloques_listado_vertical_item' => array(
+      'path' => drupal_get_path('module', 'misdistro_bloques') . '/templates',
+      'template' => 'misdistro_bloques_listado_vertical_item'
+    ),
+    'misdistro_bloques_listado_horizontal' => array(
+      'path' => drupal_get_path('module', 'misdistro_bloques') . '/templates',
+      'template' => 'misdistro_bloques_listado_horizontal'
+    ),
+    'misdistro_bloques_listado_horizontal_item' => array(
+      'path' => drupal_get_path('module', 'misdistro_bloques') . '/templates',
+      'template' => 'misdistro_bloques_listado_horizontal_item'
+    ),
+    'misdistro_bloques_listado_destacado_vertical' => array(
+      'path' => drupal_get_path('module', 'misdistro_bloques') . '/templates',
+      'template' => 'misdistro_bloques_listado_destacado_vertical'
+    ),
+    'misdistro_bloques_listado_destacado_vertical_item' => array(
+      'path' => drupal_get_path('module', 'misdistro_bloques') . '/templates',
+      'template' => 'misdistro_bloques_listado_destacado_vertical_item'
+    ),
+    'misdistro_bloques_listado_destacado_horizontal' => array(
+      'path' => drupal_get_path('module', 'misdistro_bloques') . '/templates',
+      'template' => 'misdistro_bloques_listado_destacado_horizontal'
+    ),
+    'misdistro_bloques_listado_destacado_horizontal_item' => array(
+      'path' => drupal_get_path('module', 'misdistro_bloques') . '/templates',
+      'template' => 'misdistro_bloques_listado_destacado_horizontal_item'
+    ),
+    'misdistro_bloques_listado_con_imagen_vertical' => array(
+      'path' => drupal_get_path('module', 'misdistro_bloques') . '/templates',
+      'template' => 'misdistro_bloques_listado_con_imagen_vertical'
+    ),
+    'misdistro_bloques_listado_con_imagen_vertical_item' => array(
+      'path' => drupal_get_path('module', 'misdistro_bloques') . '/templates',
+      'template' => 'misdistro_bloques_listado_con_imagen_vertical_item'
+    ),
+    'misdistro_bloques_listado_con_imagen_horizontal' => array(
+      'path' => drupal_get_path('module', 'misdistro_bloques') . '/templates',
+      'template' => 'misdistro_bloques_listado_con_imagen_horizontal'
+    ),
+    'misdistro_bloques_listado_con_imagen_horizontal_item' => array(
+      'path' => drupal_get_path('module', 'misdistro_bloques') . '/templates',
+      'template' => 'misdistro_bloques_listado_con_imagen_horizontal_item'
+    ),
+    'misdistro_bloques_listado_vacio' => array(
+      'path' => drupal_get_path('module', 'misdistro_bloques') . '/templates',
+      'template' => 'misdistro_bloques_listado_vacio'
+    ),
+    'misdistro_bloques_imagen_destacada' => array(
+      'path' => drupal_get_path('module', 'misdistro_bloques') . '/templates',
+      'template' => 'misdistro_bloques_imagen_destacada'
+    ),
+    'misdistro_bloques_titulo' => array(
+      'path' => drupal_get_path('module', 'misdistro_bloques') . '/templates',
+      'template' => 'misdistro_bloques_titulo'
+    ),
+    'misdistro_bloques_texto' => array(
+      'path' => drupal_get_path('module', 'misdistro_bloques') . '/templates',
+      'template' => 'misdistro_bloques_texto'
+    ),
+    'misdistro_bloques_shortcut' => array(
+      'path' => drupal_get_path('module', 'misdistro_bloques') . '/templates',
+      'template' => 'misdistro_bloques_shortcut'
+    ),
+    'misdistro_bloques_separador' => array(
+      'path' => drupal_get_path('module', 'misdistro_bloques') . '/templates',
+      'template' => 'misdistro_bloques_separador'
+    ),
+    'misdistro_bloques_redes_sociales_compartir' => array(
+      'path' => drupal_get_path('module', 'misdistro_bloques') . '/templates',
+      'template' => 'misdistro_bloques_redes_sociales_compartir'
+    ),
+    'misdistro_bloques_redes_sociales_timeline_facebook' => array(
+      'path' => drupal_get_path('module', 'misdistro_bloques') . '/templates',
+      'template' => 'misdistro_bloques_redes_sociales_timeline_facebook'
+    ),
+    'misdistro_bloques_redes_sociales_timeline_twitter' => array(
+      'path' => drupal_get_path('module', 'misdistro_bloques') . '/templates',
+      'template' => 'misdistro_bloques_redes_sociales_timeline_twitter'
+    ),
+  );
+}
