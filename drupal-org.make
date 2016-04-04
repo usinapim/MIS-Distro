@@ -7,7 +7,7 @@ projects[admin_theme][version] = 1.0
 
 projects[captcha][version] = 1.3
 
-projects[ctools][version] = 1.7
+projects[ctools][version] = 1.9
 
 projects[devel][version] = 1.5
 

@@ -1,0 +1,7 @@
+<?php
+/**
+ * @file
+ * Code for the Páginas feature.
+ */
+
+include_once 'misdistro_paginas.features.inc';
