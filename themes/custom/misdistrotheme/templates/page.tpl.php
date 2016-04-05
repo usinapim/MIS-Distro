@@ -72,59 +72,66 @@
  *
  * @ingroup themeable
  */
-include 'header.php';
+
 ?>
 
+<header role="banner" id="page-header" class="navbar navbar-static-top bs-docs-nav">
+	<div class="container">
+		<?php if ( ! empty( $site_slogan ) ): ?>
+			<p class="lead"><?php print $site_slogan; ?></p>
+		<?php endif; ?>
 
-<div class="main-container">
+		<?php print render( $page['header'] );
+		include 'header.php'; ?>
+	</div>
+</header> <!-- /#page-header -->
+<div class="container bs-docs-container" style="min-height: 279px;">
+	<div class="container">
+		<div class="row">
+			<?php if ( ! empty( $breadcrumb ) ): print $breadcrumb; endif; ?>
+		</div>
+		<!--<section class="content">-->
+		<div class="row">
 
-  <header role="banner" id="page-header">
-    <?php if (!empty($site_slogan)): ?>
-      <p class="lead"><?php print $site_slogan; ?></p>
-    <?php endif; ?>
+			<?php if ( ! empty( $page['sidebar_first'] ) ): ?>
+				<aside class="col-sm-3" role="complementary">
+					<?php print render( $page['sidebar_first'] ); ?>
+				</aside>  <!-- /#sidebar-first -->
+			<?php endif; ?>
 
-    <?php print render($page['header']); ?>
-  </header> <!-- /#page-header -->
+			<div <?php print $content_column_class; ?>>
+				<?php if ( ! empty( $page['highlighted'] ) ): ?>
+					<div class="highlighted jumbotron"><?php print render( $page['highlighted'] ); ?></div>
+				<?php endif; ?>
 
-  <div class="row">
+				<a id="main-content"></a>
 
-    <?php if (!empty($page['sidebar_first'])): ?>
-      <aside class="col-sm-3" role="complementary">
-        <?php print render($page['sidebar_first']); ?>
-      </aside>  <!-- /#sidebar-first -->
-    <?php endif; ?>
+				<div class="separator-bloque-contenido"></div>
 
-    <section<?php print $content_column_class; ?>>
-      <?php if (!empty($page['highlighted'])): ?>
-        <div class="highlighted jumbotron"><?php print render($page['highlighted']); ?></div>
-      <?php endif; ?>
-      <?php if (!empty($breadcrumb)): print $breadcrumb; endif;?>
-      <a id="main-content"></a>
+				<div class="container">
+					<?php print $messages; ?>
+					<?php if ( ! empty( $tabs ) ): ?>
+						<?php print render( $tabs ); ?>
+					<?php endif; ?>
+					<?php if ( ! empty( $page['help'] ) ): ?>
+						<?php print render( $page['help'] ); ?>
+					<?php endif; ?>
+					<?php if ( ! empty( $action_links ) ): ?>
+						<ul class="action-links"><?php print render( $action_links ); ?></ul>
+					<?php endif; ?>
+				</div>
+				<?php print render( $page['content'] ); ?>
+			</div>
 
-      <div class="separator-bloque-contenido"></div>
+			<?php if ( ! empty( $page['sidebar_second'] ) ): ?>
+				<aside class="col-sm-3" role="complementary">
+					<?php print render( $page['sidebar_second'] ); ?>
+				</aside>  <!-- /#sidebar-second -->
+			<?php endif; ?>
 
-      <div class="container">
-        <?php print $messages; ?>
-        <?php if (!empty($tabs)): ?>
-          <?php print render($tabs); ?>
-        <?php endif; ?>
-        <?php if (!empty($page['help'])): ?>
-          <?php print render($page['help']); ?>
-        <?php endif; ?>
-        <?php if (!empty($action_links)): ?>
-          <ul class="action-links"><?php print render($action_links); ?></ul>
-        <?php endif; ?>
-      </div>
-      <?php print render($page['content']); ?>
-    </section>
+		</div>
+		<!--</section>-->
+	</div>
 
-    <?php if (!empty($page['sidebar_second'])): ?>
-      <aside class="col-sm-3" role="complementary">
-        <?php print render($page['sidebar_second']); ?>
-      </aside>  <!-- /#sidebar-second -->
-    <?php endif; ?>
-
-  </div>
 </div>
 <?php include 'footer.php'; ?>
-

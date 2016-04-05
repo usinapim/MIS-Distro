@@ -1,6 +1,6 @@
 MIS DISTRO
 ==
-Distribución Drupal gratuita de la Dirección General de Gobierno Electrónico de la Nación.
+Distribución Drupal gratuita de la Dirección General de Gobierno Electrónico de la Nación, adaptado para la Provincia de Misiones.
 
 Es un fork de AR-Distro -> https://github.com/argob/AR-Distro#ba-distro
 
